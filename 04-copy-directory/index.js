@@ -27,12 +27,12 @@ async function copyDir() {
   }
 }
 
-copyDir()
+copyDir();
 
 async function remDir(targetDir) {
   const files = await fs.readdir(targetDir);
- files.forEach((file) => {
-  const targetFile = path.join(targetDir, file);
-  fs.unlink(targetFile, () => { })
-  })
+  files.forEach((file) => {
+    const targetFile = path.join(targetDir, file);
+    fs.unlink(targetFile, () => { });
+  });
 }

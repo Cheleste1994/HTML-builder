@@ -3,6 +3,6 @@ const path = require('path');
 const process = require('process');
 
 const fileName = path.join(__dirname, 'text.txt');
-const readStream = fs.createReadStream(fileName);
+const stream = fs.createReadStream(fileName, 'utf-8');
 
-readStream.pipe(process.stdout);
+stream.pipe(process.stdout);
