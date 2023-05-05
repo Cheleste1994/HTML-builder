@@ -9,9 +9,7 @@ async function processFolder(folderPath) {
     try {
       const stats = await fsPromises.stat(filePath);
 
-      if (stats.isDirectory()) {
-        await processFolder(filePath);
-      } else if (stats.isFile()) {
+      if (stats.isFile()) {
         const fileSizeInKilobytes = stats.size / 1024;
         const fileExtension = path.extname(filePath).slice(1);
         const fileName = path.basename(filePath, `.${fileExtension}`);
